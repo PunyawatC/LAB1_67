@@ -123,7 +123,7 @@ int main(void)
 		switch(state_Num)
 		  {
 		case 0://6
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1 ; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32)
@@ -136,7 +136,7 @@ int main(void)
 
 			break;
 		case 1://4
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0;  Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 8192)
@@ -145,10 +145,10 @@ int main(void)
 				Count = Count + 1;
 				while(ButtonMatrix == 8192){ReadMatrixButton_1Row();};
 			}
-			else{if (ButtonMatrix != 8192 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32 && ButtonMatrix != 0){Count = Count + 1;}while(ButtonMatrix != 8192 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
+			else{if (ButtonMatrix != 8192 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 8192 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 2://3
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0 ){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 64)
@@ -160,7 +160,7 @@ int main(void)
 			else{if (ButtonMatrix != 64 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 64 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 3://4
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num = 0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num = 0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 8192)
@@ -172,7 +172,7 @@ int main(void)
 			else{if (ButtonMatrix != 8192 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 8192 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 4://0
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32768)
@@ -184,7 +184,7 @@ int main(void)
 			else{if (ButtonMatrix != 32768 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32768 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 5://5
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 512)
@@ -196,7 +196,7 @@ int main(void)
 			else{if (ButtonMatrix != 512 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 512 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 6://0
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32768)
@@ -208,7 +208,7 @@ int main(void)
 			else{if (ButtonMatrix != 32768 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32768 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 7://0
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32768)
@@ -220,7 +220,7 @@ int main(void)
 			else{if (ButtonMatrix != 32768 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32768 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 8://0
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32768)
@@ -232,7 +232,7 @@ int main(void)
 			else{if (ButtonMatrix != 32768 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32768 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 9://6
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num =  0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 32)
@@ -244,7 +244,7 @@ int main(void)
 			else{if (ButtonMatrix != 32 && ButtonMatrix != 0 && ButtonMatrix != 128 && ButtonMatrix != 2048 && ButtonMatrix != 2 && ButtonMatrix != 4 && ButtonMatrix != 1 && ButtonMatrix != 8){Count = Count + 1;}while(ButtonMatrix != 32 && ButtonMatrix != 0){ReadMatrixButton_1Row();};}
 			break;
 		case 10://7
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num = 0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num = 0; Count = 0;}
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){state_Num = state_Num - 1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
 			if (ButtonMatrix == 4096)
@@ -258,7 +258,7 @@ int main(void)
 		case 11:
 			//if (ButtonMatrix == 2 && state_Num > 0 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); state_Num = state_Num -1; Count = Count - 1;
 			//while(ButtonMatrix == 2){ReadMatrixButton_1Row();}}
-			if (ButtonMatrix == 1){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);state_Num = 0; Count = 0;}
+			if (ButtonMatrix == 1 && Count >= 0){HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);state_Num = 0; Count = 0;}
 			if (ButtonMatrix == 8)
 			{
 				if(Count == 11 && state_Num == 11)
